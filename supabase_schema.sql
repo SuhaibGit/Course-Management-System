@@ -6,7 +6,7 @@ create table public.courses (
   description text not null,
   instructor text not null,
   price numeric not null default 0,
-  user_id uuid references auth.users not null
+  user_id uuid references auth.users not null on delete cascade
 );
 
 -- Enable RLS
