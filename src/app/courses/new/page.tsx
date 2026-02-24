@@ -131,10 +131,10 @@ export default function NewCoursePage() {
                         <div className="pt-4">
                             <button
                                 type="submit"
-                                disabled={createMutation.isLoading}
+                                disabled={createMutation.isPending}
                                 className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-600/20 transition-all flex items-center justify-center space-x-2"
                             >
-                                {createMutation.isLoading ? (
+                                {createMutation.isPending ? (
                                     <Loader2 className="w-6 h-6 animate-spin" />
                                 ) : (
                                     <>

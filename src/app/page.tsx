@@ -277,9 +277,14 @@ export default function HomePage() {
                               </Link>
                               <button
                                 onClick={() => deleteMutation.mutate(course.id)}
-                                className="text-slate-500 hover:text-red-400 transition-colors"
+                                disabled={deleteMutation.isPending}
+                                className="text-slate-500 hover:text-red-400 transition-colors disabled:opacity-50"
                               >
-                                <Trash2 className="w-4 h-4" />
+                                {deleteMutation.isPending ? (
+                                  <Loader2 className="w-4 h-4 animate-spin" />
+                                ) : (
+                                  <Trash2 className="w-4 h-4" />
+                                )}
                               </button>
                             </div>
                           )}
